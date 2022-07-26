@@ -21,3 +21,24 @@ Funding:
 * [Weston Family Foundation Microbiome Initiative](https://westonfoundation.ca/weston-family-microbiome-initiative/) to SMR
 * [NSERC Discovery Grant](https://www.nserc-crsng.gc.ca/professors-professeurs/grants-subs/dgigp-psigp_eng.asp) to SMR
 * [Supplement and E.W.R Steacie Memorial Fellowship](https://www.nserc-crsng.gc.ca/prizes-prix/steacie-steacie/about-apropos_eng.asp) to SMR.
+
+# Table of Contents
+1. [Install software](#1-install-software)
+2. [Quality Check](#2-quality-check)
+3. [Separating Mapped and Unmapped Reads](#3-separating-mapped-and-unmapped-reads)
+4. [metaSPADES](#4-metaspades)
+5. [Diversity Statistics](#5-diversity-statistics)
+6. [Random Forests](#6-random-forests)
+7. [Functional Analyses](#7-functional-analyses)
+    * [GhostKOALA](#71-ghostkoala)
+    * [ggNOG-mapper](#72-eggnog-mapper)
+
+# 1. Install Software
+# 2. Quality Check
+# 3. Separating Mapped and Unmapped Reads
+# 4. metaSPADES
+# 5. Diversity Statistics
+# 6. Random Forests
+# 7. Functional Analyses
+## 7.1. GhostKOALA
+## 7.2. eggNOG-mapper
