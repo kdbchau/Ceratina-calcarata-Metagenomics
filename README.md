@@ -26,25 +26,16 @@ Funding:
 1. [Install software](#1-install-software)
 2. [Quality Check](#2-quality-check)
 3. [Separating Mapped and Unmapped Reads](#3-separating-mapped-and-unmapped-reads)
-4. [metaSPADES](#4-metaspades)
-5. [Diversity Statistics](#5-diversity-statistics)
-6. [Random Forests](#6-random-forests)
-7. [WGCNA](#7-wgcna)
-8. [CoNet](#8-conet)
-9. [Functional Analyses](#-functional-analyses)
-    * [GhostKOALA](#1-ghostkoala)
-    * [eggNOG-mapper](#2-eggnog-mapper)
+4. [Population Genetics]
+    *
+5. [Metagenomics]    
+    * [metaSPADES](#51-metaspades)
+    * [Diversity Statistics](#52-diversity-statistics)
+    * [Random Forests](#53-random-forests)
+    * [WGCNA](#54-wgcna)
+    * [Functional Analyses](#55-functional-analyses)
+        * [GhostKOALA](#551-ghostkoala)
+        * [eggNOG-mapper](#552-eggnog-mapper)
+6. [CoNet - Integration of Pop Gen and Metagenomics](#6-conet-integration-of-pop-gen-and-metagenomics)
 
 
-# 1. Install Software
-# 2. Quality Check
-# 3. Separating Mapped and Unmapped Reads
-# 4. metaSPADES
-# 5. Diversity Statistics
-# 6. Random Forests
-# 7. WGCNA
-# 8. CoNet
-
-# . Functional Analyses
-## .1. GhostKOALA
-## .2. eggNOG-mapper
