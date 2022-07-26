@@ -1,1 +1,1 @@
-# Ceratina-calcarata-Metagenomics
+# Ceratina calcarata Metagenomics
