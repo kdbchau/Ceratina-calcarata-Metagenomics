@@ -26,9 +26,9 @@ Funding:
 1. [Install software](#1-install-software)
 2. [Quality Check](#2-quality-check)
 3. [Separating Mapped and Unmapped Reads](#3-separating-mapped-and-unmapped-reads)
-4. [Population Genetics]
+4. [Population Genetics](#4-population-genetics)
     *
-5. [Metagenomics]    
+5. [Metagenomics](#5-metagenomics)  
     * [metaSPADES](#51-metaspades)
     * [Diversity Statistics](#52-diversity-statistics)
     * [Random Forests](#53-random-forests)
