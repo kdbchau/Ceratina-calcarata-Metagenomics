@@ -29,9 +29,12 @@ Funding:
 4. [metaSPADES](#4-metaspades)
 5. [Diversity Statistics](#5-diversity-statistics)
 6. [Random Forests](#6-random-forests)
-7. [Functional Analyses](#7-functional-analyses)
-    * [GhostKOALA](#71-ghostkoala)
-    * [ggNOG-mapper](#72-eggnog-mapper)
+7. [WGCNA](#7-wgcna)
+8. [CoNet](#8-conet)
+. [Functional Analyses](#-functional-analyses)
+    * [GhostKOALA](#1-ghostkoala)
+    * [eggNOG-mapper](#2-eggnog-mapper)
+
 
 # 1. Install Software
 # 2. Quality Check
@@ -39,6 +42,9 @@ Funding:
 # 4. metaSPADES
 # 5. Diversity Statistics
 # 6. Random Forests
-# 7. Functional Analyses
-## 7.1. GhostKOALA
-## 7.2. eggNOG-mapper
+# 7. WGCNA
+# 8. CoNet
+
+# . Functional Analyses
+## .1. GhostKOALA
+## .2. eggNOG-mapper
