@@ -3,9 +3,9 @@
 This repository hosts the scripts and brief methods from our manuscript (title above). This project focused on using mapped and unmapped reads from whole genome sequencing of the small carpenter bee (_Ceratina calcarata_) to obtain population genetic and metagenomic data, respectively.
 
 Authors:
-* Katherine D. Chau (me)
-* [Farida Samad-zada]
-* [Evan P. Kelemen]
+* [Katherine D. Chau (me)](https://www.linkedin.com/in/balasink/)
+* [Farida Samad-zada](https://www.linkedin.com/in/faridasamadzada/?originalSubdomain=ca)
+* [Evan P. Kelemen](https://scholar.google.com/citations?user=eg7ziI8AAAAJ&hl=en)
 * [Sandra M. Rehan](http://www.rehanlab.com/people.html)
 
 Acknowledgements:
