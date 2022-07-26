@@ -31,8 +31,6 @@ Funding:
 6. [Random Forests](#6-random-forests)
 7. [WGCNA](#7-wgcna)
 8. [CoNet](#8-conet)
-
-
 9. [Functional Analyses](#-functional-analyses)
     * [GhostKOALA](#1-ghostkoala)
     * [eggNOG-mapper](#2-eggnog-mapper)
