@@ -91,4 +91,6 @@ This will separate mapped and unmapped reads into fastq files which can then be 
 
 ## 5.1. metaSPADES
 
-[__Metaspades__](https://cab.spbu.ru/software/meta-spades/) (version 3.10.1) is another option to use for gathering information on the sequences. In this case, contigs are produced which can then be BLASTed. [__Metaspades script__]().
+[__Metaspades__](https://cab.spbu.ru/software/meta-spades/) (version 3.10.1) is another option to use for gathering information on the sequences. In this case, contigs are produced which can then be BLASTed. [__Metaspades script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/metaspades.sh).
+
+Once the ```contigs.fasta``` files are obtained, we can BLAST the contigs to obtain taxonomy information. To do this, we use BLAST+ and the [__BLAST+ script__](). 
