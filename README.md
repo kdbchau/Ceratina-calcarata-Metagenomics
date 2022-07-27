@@ -1,6 +1,6 @@
 # Integrative metagenomics of wild bees reveals urbanization tied to reduced genetic diversity and increased pathogen loads
 
-This repository hosts the scripts and brief methods from our [__manuscript__](). This project focused on using mapped and unmapped reads from whole genome sequencing of the small carpenter bee (_Ceratina calcarata_) to obtain population genetic and metagenomic data, respectively.
+This repository hosts the scripts and brief methods from our [__manuscript__](). This project focused on using mapped and unmapped reads from whole genome sequencing of the small carpenter bee (_Ceratina calcarata_) to obtain population genetic and metagenomic data, respectively. Our main goal was to understand how the genetic and metagenomic components of the bee are influenced by an urbanization gradient.
 
 Authors:
 * [Katherine D. Chau (me)](https://www.linkedin.com/in/balasink/)
@@ -39,7 +39,7 @@ Funding:
 6. [CoNet - Integration of Pop Gen and Metagenomics](#6-conet-integration-of-pop-gen-and-metagenomics)
 
 # 1. Install software
-We will be using several software in order to take our unmapped whole genome sequence (WGS) reads and extract taxonomic information from them.
+We will be using several software in order to take our unmapped whole genome sequence (WGS) reads and extract taxonomic information from them. 
 
 1. [ __FastQC__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.9)
 2. [__Trimmomatic__](http://www.usadellab.org/cms/?page=trimmomatic) (version 0.39)
@@ -58,6 +58,7 @@ We will be using several software in order to take our unmapped whole genome seq
 15. [__Past__](https://past.en.lo4d.com/windows) (version 4.06)
 16. [__GhostKOALA__](https://www.kegg.jp/ghostkoala/)
 17. [__eggNOG-mapper__](https://github.com/eggnogdb/eggnog-mapper) (version 2.1.6)
+18. [__R__](https://www.r-project.org/) (version 4.2.0)
 
 Note: Majority of the above software are already in the Compute Canada clusters and just need to be loaded using "module load". For example:
 
@@ -139,7 +140,6 @@ This will produce three types of output files but we will be using the ```output
 The ```output.faa``` files were concantenated by bin for each of the variables and run through [__GhostKoala__](https://www.kegg.jp/ghostkoala/). So for example, for agricultural percent I had concantenated all the ```output.faa``` samples that belonged to bin 1, then to bin 2, then bin 3, etc. I ended up with 5 ```.faa``` files. I ran these through GhostKoala to get the KEGG reconstructed pathways list.
 
 
-
 ### 5.5.2. eggNOG-mapper
 
 eggNOG-mapper will use Diamond (the nr database) to blast the fragmented sequences to obtain protein information. The ```output.faa``` files are used. eggNOG-mapper needs to be manually installed into the cluster. After downloading the ```tar.gz``` file and it is uploaded into the cluster, run the following:
@@ -166,3 +166,9 @@ for file in *_output.faa; do name=${file%%_*}; ../../08-EGGNOGGMAPPER/eggnog-map
 ```
 
 This will produce ```.emapper.hits```, ```.emapper.annotations```, and ```.emapper.seed_orthologs``` files. KEGG ID information is found within ```.emapper.annotations```. From this file, extract the KEGG ids which is in the KEGG_KO column (they look something like "ko:K01100" or with multiple ids). Then once we have our last of KEGG ids from eggNOG-mapper, we can input them into the [__KEGG Database__](https://www.genome.jp/kegg/ko.html) to see what the functional names are associated with these KEGG terms.
+
+# 6. CoNet - Integration of Pop Gen and Metagenomics
+
+Finally, to integrate the population genetic and metagenomic component to infer potential risks to wild bee health, we analyzed the correlation between population and landscape-level data with potenital bee and plant pathogen diversity. 
+
+We created a dataframe that had samples as the rows, and the columns included: pathogenicity (Bray-Curtis dissimilarity for just identified bee and plant pathogens), Yang's relatedness, environmental distance, and resistance distance. We ran this with our [__CoNet script__]().
