@@ -58,10 +58,10 @@ We will be using several software in order to take our unmapped whole genome seq
 
 # 2. Quality Check
 Run FASTQC on the raw reads to check their quality, followed by trimming the adaptors and poor quality bases. After the trim, run FASTQC again to ensure adaptors and base quality is acceptable.
-[__FastQC script__](https://github.com/kdbchau/metagenomics/blob/main/Scripts/Cleaning/fastqc.sh)
+[__FastQC script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/fastqc.sh)
 
 Adaptors are there and there are some poor quality bases. Will run trimmomatic to improve quality.
-[__Trimmomatic script__](https://github.com/kdbchau/metagenomics/blob/main/Scripts/Cleaning/trimscript.sh)
+[__Trimmomatic script__]()
 
 After this trim, run FASTQC again to check all is fine. Then move on to the read mapping! Can even use [__MultiQC__](https://multiqc.info/) here to get a nice comprehensive report of the trimmed results.
 
