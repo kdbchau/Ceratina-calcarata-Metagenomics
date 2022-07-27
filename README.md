@@ -27,7 +27,7 @@ Funding:
 2. [Quality Check](#2-quality-check)
 3. [Separating Mapped and Unmapped Reads](#3-separating-mapped-and-unmapped-reads)
 4. [Population Genetics](#4-population-genetics)
-    *
+    * 
 5. [Metagenomics](#5-metagenomics)  
     * [metaSPADES](#51-metaspades)
     * [Diversity Statistics](#52-diversity-statistics)
@@ -91,7 +91,11 @@ This will separate mapped and unmapped reads into fastq files which can then be 
 
 # 4. Population Genetics
 
-## 4.1.
+## 4.1. Variant Calling and Filtering
+Variant calling was done using both GATK and BCFTools mpileup
+The resulting VCF files were filtered using GATK, BCFtools and VCFtools
+Lastly, the two files were interesected using BCFTools intersect 
+[__Variant calling script__] (https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/VariantCalling.sh)
 
 # 5. Metagenomics
 
