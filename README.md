@@ -110,7 +110,7 @@ To test if random forests would be worthwhile on this data, I used the following
 
 ## 5.4. DESeq2 and WGCNA
 
-The taxa dataframe of relative contig abundances is first normalized using the [__DESeq2 R script__](), and then the obtained normalized dataframe is used for WGCNA analysis using the [__WGCNA R script__]().
+The taxa dataframe of relative contig abundances is first normalized using the [__DESeq2 R script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/deseq2.R), and then the obtained normalized dataframe is used for WGCNA analysis using the [__WGCNA R script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/wgcna.R).
 
 DESeq2 will identify in which category are taxa overrepresented (positive, significant Log2foldC). If the Log2FoldC is negative, then that taxa is more abundant in the second, contrasted sample.
 
