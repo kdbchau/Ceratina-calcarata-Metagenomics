@@ -100,10 +100,18 @@ Once the ```contigs.fasta``` files are obtained, we can BLAST the contigs to obt
 
 ## 5.2. Diversity Statistics
 
-PERMANOVA via _adonis2_ using Bray-Curtis method, followed by ANOVA for beta dispersion via _betadisper_. This is then followed by TUKEY HSD via _TukeyHSD_ if PERMANOVA was significant and beta dispersion was not significant. [Diversity R Script](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/diversity.R).
+PERMANOVA via _adonis2_ using Bray-Curtis method, followed by ANOVA for beta dispersion via _betadisper_. This is then followed by TUKEY HSD via _TukeyHSD_ if PERMANOVA was significant and beta dispersion was not significant. [__Diversity R Script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/diversity.R).
 
 SIMPER analyses was done using [__Past__](https://past.en.lo4d.com/windows) and simply uploading the dataframe which includes taxa relative contig abundances and environmental feature bin information. The dataframe should be set up where each sample is the row and each variable (landscape feature and family/genus) are the columns. Then simply selecting SIMPER analysis while highlighting all the taxa and all the landscape features, selecting pool data, and using Bray-Curtis dissimilarities.
 
 ## 5.3. Random Forests
 
-To test if random forests would be worthwhile on this data, I used the following [__random forest script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/randomforest.R) to simply assess whether classification or regression random forest analyses would produce low out-of-box errors or high variance explained %.
+To test if random forests would be worthwhile on this data, I used the following [__random forest R script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/randomforest.R) to simply assess whether classification or regression random forest analyses would produce low out-of-box errors or high variance explained %.
+
+## 5.4. DESeq2 and WGCNA
+
+The taxa dataframe of relative contig abundances is first normalized using the [__DESeq2 R script__](), and then the obtained normalized dataframe is used for WGCNA analysis using the [__WGCNA R script__]().
+
+DESeq2 will identify in which category are taxa overrepresented (positive, significant Log2foldC). If the Log2FoldC is negative, then that taxa is more abundant in the second, contrasted sample.
+
+WGCNA aims to find significant modules or clusters of taxa with respect to each landscape variable, and from those clusters we can identify hub genes by highlighting those that have an absolute gene significance (GS) value ≥ 0.2 and an absolute module membership (MM) value ≥ 0.8 (this can be done in Excel).
