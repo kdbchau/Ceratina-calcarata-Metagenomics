@@ -65,4 +65,7 @@ Adaptors are there and there are some poor quality bases. Will run trimmomatic t
 
 After this trim, run FASTQC again to check all is fine. Then move on to the read mapping! Can even use [__MultiQC__](https://multiqc.info/) here to get a nice comprehensive report of the trimmed results.
 
+# 3. Separating Mapped and Unmapped Reads
 
+The following script uses BWA to map reads to a reference genome, and incorporates sambamba, samtools, and bedtools for extraction of mapped and unmapped reads.
+[__Mapping script__]()
