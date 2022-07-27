@@ -11,8 +11,8 @@ Authors:
 Acknowledgements:
 * [Rehan Lab](http://www.rehanlab.com/) for constructive feedback on earlier versions of our manuscript
 * Alessia Schembri, Phuong Nguyen, and Yousaf Malik for assistance with field collection of bee specimens.
-* [SHARCNET](https://www.sharcnet.ca/my/front/) for technical support on high-performance computing (HPC) clusters ([Graham](https://docs.alliancecan.ca/wiki/Graham), [Beluga](https://docs.alliancecan.ca/wiki/B%C3%A9luga), and [Cedar](https://docs.alliancecan.ca/wiki/Cedar))
-    * [Jose Sergio Hleap]() for assistance with the HPC clusters and overall pipeline performance.
+* [SHARCNET](https://www.sharcnet.ca/my/front/) community for technical support on high-performance computing (HPC) clusters ([Graham](https://docs.alliancecan.ca/wiki/Graham), [Beluga](https://docs.alliancecan.ca/wiki/B%C3%A9luga), and [Cedar](https://docs.alliancecan.ca/wiki/Cedar))
+    * Jose Sergio Hleap for assistance with the HPC clusters and overall pipeline performance.
 
 Funding:
 * [Mitacs Elevate Postdoctoral Fellowship](https://www.mitacs.ca/en/programs/elevate) to KDC
