@@ -79,7 +79,9 @@ After this trim, run FASTQC again to check all is fine. Then move on to the read
 # 3. Separating Mapped and Unmapped Reads
 
 The following script uses BWA to map reads to a reference genome, and incorporates sambamba, samtools, and bedtools for extraction of mapped and unmapped reads.
-[__Mapping script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/mapping.sh)
+[__Mapping script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/mapping.sh).
+
+We used the [_Ceratinna calcarata_] genome to map the reads.
 
 This will separate mapped and unmapped reads into fastq files which can then be used for population genetics [section 4](#4-population-genetics) or metagenomics [section 5](#5-metagenomics), respectively.
 
