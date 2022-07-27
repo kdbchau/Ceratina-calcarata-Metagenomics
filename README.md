@@ -55,8 +55,9 @@ We will be using several software in order to take our unmapped whole genome seq
 12. [__Entrez Direct EUtilities (Efetch)__](https://www.ncbi.nlm.nih.gov/books/NBK179288/) (version 15.3)
 13. [__seqtk__](https://github.com/lh3/seqtk) (version 1.3-r106)
 14. [__FragGeneScan__](https://sourceforge.net/projects/fraggenescan/) (version 1.31)
+15. [__Past__](https://past.en.lo4d.com/windows) (version 4.06)
 
-Note: The above software are already in the clusters and just need to be loaded using "module load". For example:
+Note: Majority of the above software are already in the Compute Canada clusters and just need to be loaded using "module load". For example:
 
 ```
    module load fastqc # will load the latest version in the cluster
@@ -99,6 +100,10 @@ Once the ```contigs.fasta``` files are obtained, we can BLAST the contigs to obt
 
 ## 5.2. Diversity Statistics
 
-Here are a list of mini R scripts or R code that I used to run diversity stats for my data.
+PERMANOVA via _adonis2_ using Bray-Curtis method, followed by ANOVA for beta dispersion via _betadisper_. This is then followed by TUKEY HSD via _TukeyHSD_ if PERMANOVA was significant and beta dispersion was not significant. [Diversity R Script](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/diversity.R).
 
-PERMANOVA via _adonis2_ using Bray-Curtis method, followed by ANOVA for beta dispersion via _betadisper_. This is then followed by TUKEY HSD via _TukeyHSD_ if PERMANOVA was significant and beta dispersion was not significant. [Diversity R Script]().
+SIMPER analyses was done using [__Past__](https://past.en.lo4d.com/windows) and simply uploading the dataframe which includes taxa relative contig abundances and environmental feature bin information. The dataframe should be set up where each sample is the row and each variable (landscape feature and family/genus) are the columns. Then simply selecting SIMPER analysis while highlighting all the taxa and all the landscape features, selecting pool data, and using Bray-Curtis dissimilarities.
+
+## 5.3. Random Forests
+
+To test if random forests would be worthwhile on this data, I used the following [__random forest script__]() to simply assess whether classification or regression random forest analyses would produce low out-of-box errors or high variance explained %.
