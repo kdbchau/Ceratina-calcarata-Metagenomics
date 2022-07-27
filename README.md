@@ -92,10 +92,13 @@ This will separate mapped and unmapped reads into fastq files which can then be 
 # 4. Population Genetics
 
 ## 4.1. Variant Calling and Filtering
-Variant calling was done using both GATK and BCFTools mpileup
-The resulting VCF files were filtered using GATK, BCFtools and VCFtools
+Variant calling was done using both GATK and BCFTools mpileup. 
+The resulting VCF files were filtered using GATK, BCFtools and VCFtools. 
 Lastly, the two files were interesected using BCFTools intersect 
-[__Variant calling script__] (https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/VariantCalling.sh)
+[__Variant calling script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/VariantCalling.sh). 
+
+
+## 4.2. 
 
 # 5. Metagenomics
 
