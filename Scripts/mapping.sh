@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account= #Your PI's Account
+#SBATCH --account=def-sanrehan #Your PI's Account
 #SBATCH --cpus-per-task=48     # Ask for full nodes is better (32 graham and Beluga / 48 in Cedar)
 #SBATCH --nodes=1              # Make sure is only one node (nothing is MPI)
 #SBATCH --mem=0                # Reserve all memory in that node
