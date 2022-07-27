@@ -106,4 +106,4 @@ SIMPER analyses was done using [__Past__](https://past.en.lo4d.com/windows) and 
 
 ## 5.3. Random Forests
 
-To test if random forests would be worthwhile on this data, I used the following [__random forest script__]() to simply assess whether classification or regression random forest analyses would produce low out-of-box errors or high variance explained %.
+To test if random forests would be worthwhile on this data, I used the following [__random forest script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/randomforest.R) to simply assess whether classification or regression random forest analyses would produce low out-of-box errors or high variance explained %.
