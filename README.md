@@ -171,4 +171,4 @@ This will produce ```.emapper.hits```, ```.emapper.annotations```, and ```.emapp
 
 Finally, to integrate the population genetic and metagenomic component to infer potential risks to wild bee health, we analyzed the correlation between population and landscape-level data with potenital bee and plant pathogen diversity. 
 
-We created a dataframe that had samples as the rows, and the columns included: pathogenicity (Bray-Curtis dissimilarity for just identified bee and plant pathogens), Yang's relatedness, environmental distance, and resistance distance. We ran this with our [__CoNet script__]().
+We created a dataframe that had samples as the rows, and the columns included: pathogenicity (Bray-Curtis dissimilarity for just identified bee and plant pathogens), Yang's relatedness, environmental distance, and resistance distance. We ran this with our [__CoNet script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/conet.R).
