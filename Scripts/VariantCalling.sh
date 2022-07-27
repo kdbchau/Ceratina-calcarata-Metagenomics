@@ -204,7 +204,7 @@ vcftools --gzvcf mp_snps_filterpass_manualfilter1.recode.vcf.gz --remove samples
 bgzip mp_snps_fpass_mf1_178indv_filter2.recode.vcf
 
 
-3. Intersecting GATK and BCFTools VCF files
+# 3. Intersecting GATK and BCFTools VCF files
 
 VCFgatk=./gatk_snps_fpass_mf1_178indv_minDP3_minmeanDP8_maxMissing90.recode.vcf.gz
 VCFmp=./mp_snps_fpass_mf1_178indv_filter2.recode.vcf.gz
