@@ -56,6 +56,17 @@ We will be using several software in order to take our unmapped whole genome seq
 13. [__seqtk__](https://github.com/lh3/seqtk) (version 1.3-r106)
 14. [__FragGeneScan__](https://sourceforge.net/projects/fraggenescan/) (version 1.31)
 
+Note: The above software are already in the clusters and just need to be loaded using "module load". For example:
+
+```
+   module load fastqc # will load the latest version in the cluster
+   module load samtools/1.10 # specify the version to use a specific one
+   module load bwa/0.7.17
+```
+
+Loading these modules as such will appear in some of our scripts.
+
+
 # 2. Quality Check
 Run FASTQC on the raw reads to check their quality, followed by trimming the adaptors and poor quality bases. After the trim, run FASTQC again to ensure adaptors and base quality is acceptable.
 [__FastQC script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/fastqc.sh)
@@ -68,4 +79,16 @@ After this trim, run FASTQC again to check all is fine. Then move on to the read
 # 3. Separating Mapped and Unmapped Reads
 
 The following script uses BWA to map reads to a reference genome, and incorporates sambamba, samtools, and bedtools for extraction of mapped and unmapped reads.
-[__Mapping script__]()
+[__Mapping script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/mapping.sh)
+
+This will separate mapped and unmapped reads into fastq files which can then be used for population genetics [section 4](#4-population-genetics) or metagenomics [section 5](#5-metagenomics), respectively.
+
+# 4. Population Genetics
+
+## 4.1.
+
+# 5. Metagenomics
+
+## 5.1. metaSPADES
+
+[__Metaspades__](https://cab.spbu.ru/software/meta-spades/) (version 3.10.1) is another option to use for gathering information on the sequences. In this case, contigs are produced which can then be BLASTed. [__Metaspades script__]().
