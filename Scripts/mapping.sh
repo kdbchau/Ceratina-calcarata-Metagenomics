@@ -24,8 +24,8 @@ module load sambamba/0.8.0
 ## One way to increase efficiency of your runs is to "stage" or copy the IO 
 ## heavy files into localscratch (within a jobscript can be accessed with $SLURM_TMPDIR)
 REFPATH=/scratch/chauk/project1_2021/annotation_12.30.2020
-parallel --will-cite -j ${SLURM_CPUS_PER_TASK} cp {} ${SLURM_TMPDIR} ::: ${REFPATH}/PO1409_Ceratina_calcarata.RepeatMasked*
-REF=${SLURM_TMPDIR}/PO1409_Ceratina_calcarata.RepeatMasked.fasta.gz
+parallel --will-cite -j ${SLURM_CPUS_PER_TASK} cp {} ${SLURM_TMPDIR} ::: ${REFPATH}/jasmine-uni1041-mb-hirise-teril_10-15-2020__final_assembly.fasta
+REF=${SLURM_TMPDIR}/jasmine-uni1041-mb-hirise-teril_10-15-2020__final_assembly.fasta
 
 ## Staging the inputs might be good as well
 STAGED_PATH=${SLURM_TMPDIR}/inputs
