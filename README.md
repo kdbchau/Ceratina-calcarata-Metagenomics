@@ -38,4 +38,31 @@ Funding:
         * [eggNOG-mapper](#552-eggnog-mapper)
 6. [CoNet - Integration of Pop Gen and Metagenomics](#6-conet-integration-of-pop-gen-and-metagenomics)
 
+# 1. Install software
+We will be using several software in order to take our unmapped whole genome sequence (WGS) reads and extract taxonomic information from them.
+
+1. [ __FastQC__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.9)
+2. [__Trimmomatic__](http://www.usadellab.org/cms/?page=trimmomatic) (version 0.39)
+3. [__BWA__](https://github.com/lh3/bwa) (version 0.7.17)
+4. [__SAMtools__](http://www.htslib.org/) (version 1.10)
+5. [__Sambamba__](https://lomereiter.github.io/sambamba/) (version 0.8.0)
+6. [__BAMtools__](https://github.com/pezmaster31/bamtools) (version 2.5.1)
+7. [__Bedtools__](https://bedtools.readthedocs.io/en/latest/) (version 2.29.2)
+8. [__Metaspades__](https://cab.spbu.ru/software/meta-spades/) (version 3.10.1)
+9. [__Kraken2__](https://ccb.jhu.edu/software/kraken2/) (version 2.1.1)
+10. [__Diamond__](https://github.com/bbuchfink/diamond) (version 2.0.13)
+11. [__Blast+__](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) (version 2.12.0)
+12. [__Entrez Direct EUtilities (Efetch)__](https://www.ncbi.nlm.nih.gov/books/NBK179288/) (version 15.3)
+13. [__seqtk__](https://github.com/lh3/seqtk) (version 1.3-r106)
+14. [__FragGeneScan__](https://sourceforge.net/projects/fraggenescan/) (version 1.31)
+
+# 2. Quality Check
+Run FASTQC on the raw reads to check their quality, followed by trimming the adaptors and poor quality bases. After the trim, run FASTQC again to ensure adaptors and base quality is acceptable.
+[__FastQC script__](https://github.com/kdbchau/metagenomics/blob/main/Scripts/Cleaning/fastqc.sh)
+
+Adaptors are there and there are some poor quality bases. Will run trimmomatic to improve quality.
+[__Trimmomatic script__](https://github.com/kdbchau/metagenomics/blob/main/Scripts/Cleaning/trimscript.sh)
+
+After this trim, run FASTQC again to check all is fine. Then move on to the read mapping! Can even use [__MultiQC__](https://multiqc.info/) here to get a nice comprehensive report of the trimmed results.
+
 
