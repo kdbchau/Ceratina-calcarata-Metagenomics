@@ -32,7 +32,7 @@ Funding:
     * [metaSPADES](#51-metaspades)
     * [Diversity Statistics](#52-diversity-statistics)
     * [Random Forests](#53-random-forests)
-    * [WGCNA](#54-wgcna)
+    * [DESeq2 and WGCNA](#54-deseq2-and-wgcna)
     * [Functional Analyses](#55-functional-analyses)
         * [GhostKOALA](#551-ghostkoala)
         * [eggNOG-mapper](#552-eggnog-mapper)
@@ -95,4 +95,10 @@ This will separate mapped and unmapped reads into fastq files which can then be 
 
 [__Metaspades__](https://cab.spbu.ru/software/meta-spades/) (version 3.10.1) is another option to use for gathering information on the sequences. In this case, contigs are produced which can then be BLASTed. [__Metaspades script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/metaspades.sh).
 
-Once the ```contigs.fasta``` files are obtained, we can BLAST the contigs to obtain taxonomy information. To do this, we use BLAST+ and the [__BLAST+ script__](). 
+Once the ```contigs.fasta``` files are obtained, we can BLAST the contigs to obtain taxonomy information. To do this, we use BLAST+ and the [__BLAST+ script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/blast.sh).
+
+## 5.2. Diversity Statistics
+
+Here are a list of mini R scripts or R code that I used to run diversity stats for my data.
+
+PERMANOVA via _adonis2_ using Bray-Curtis method, followed by ANOVA for beta dispersion via _betadisper_. This is then followed by TUKEY HSD via _TukeyHSD_ if PERMANOVA was significant and beta dispersion was not significant. [Diversity R Script]().
