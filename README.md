@@ -56,6 +56,8 @@ We will be using several software in order to take our unmapped whole genome seq
 13. [__seqtk__](https://github.com/lh3/seqtk) (version 1.3-r106)
 14. [__FragGeneScan__](https://sourceforge.net/projects/fraggenescan/) (version 1.31)
 15. [__Past__](https://past.en.lo4d.com/windows) (version 4.06)
+16. [__GhostKOALA__](https://www.kegg.jp/ghostkoala/)
+17. [__eggNOG-mapper__](https://github.com/eggnogdb/eggnog-mapper) (version 2.1.6)
 
 Note: Majority of the above software are already in the Compute Canada clusters and just need to be loaded using "module load". For example:
 
@@ -115,3 +117,52 @@ The taxa dataframe of relative contig abundances is first normalized using the [
 DESeq2 will identify in which category are taxa overrepresented (positive, significant Log2foldC). If the Log2FoldC is negative, then that taxa is more abundant in the second, contrasted sample.
 
 WGCNA aims to find significant modules or clusters of taxa with respect to each landscape variable, and from those clusters we can identify hub genes by highlighting those that have an absolute gene significance (GS) value ≥ 0.2 and an absolute module membership (MM) value ≥ 0.8 (this can be done in Excel).
+
+## 5.5. Functional Analyses
+
+For the contigs that correspond to our domains of interest (these sequences were isolated from the metaspades ```contigs.fasta``` output files), we run them through **FragGeneScan** which finds fragmented genes in short reads. 
+
+
+```
+# Run FragGeneScan on the cluster like this, or in an sbatch script
+for file in *extracted_contigs.fasta; do name=${file%%_*}; /scratch/chauk/06-EXTRACTED_CONTIGS/FragGeneScan1.31/FragGeneScan -s /scratch/chauk/06-EXTRACTED_CONTIGS/${name}_extracted_contigs.fasta -o /scratch/chauk/06-EXTRACTED_CONTIGS/${name}_output -p 1 -w 0 -t illumina_5; echo "done for $file"; done
+# -w 0 means fasta file has short sequence reads (-w 1 would mean complete genomic sequence)
+# -p 1 means use 1 thread (default is already 1, can omit this)
+# -t illumina_5 means train the data using Illumina sequencing reads with about 0.5% error rate.
+```
+
+This will produce three types of output files but we will be using the ```output.faa``` files for further functional analysis.
+
+
+### 5.5.1. GhostKOALA
+
+The ```output.faa``` files were concantenated by bin for each of the variables and run through [__GhostKoala__](https://www.kegg.jp/ghostkoala/). So for example, for agricultural percent I had concantenated all the ```output.faa``` samples that belonged to bin 1, then to bin 2, then bin 3, etc. I ended up with 5 ```.faa``` files. I ran these through GhostKoala to get the KEGG reconstructed pathways list.
+
+
+
+### 5.5.2. eggNOG-mapper
+
+eggNOG-mapper will use Diamond (the nr database) to blast the fragmented sequences to obtain protein information. The ```output.faa``` files are used. eggNOG-mapper needs to be manually installed into the cluster. After downloading the ```tar.gz``` file and it is uploaded into the cluster, run the following:
+
+
+```
+module load python
+tar xvzf 2.1.6.tar.gz
+rm 2.1.6.tar.gz
+cd eggnog-mapper-2.1.6
+pip install -r requirements.txt
+python download_eggnog_data.py  ## note have python module loaded before, but make sure python version 3.7.7 is actually used for eggnog mapper analysis
+```
+
+Once complete, then we can run eggNOG-mapper as an sbatch script or in the terminal if the samples are small enough.
+
+```
+module load StdEnv/2020 gcc/9.3.0
+module load hmmer diamond prodigal
+module load python/3.7.7
+module load mmseqs2/13-45111
+for file in *_output.faa; do name=${file%%_*}; ../../08-EGGNOGGMAPPER/eggnog-mapper-2.1.6/emapper.py -i $file -o ../../08-EGGNOGGMAPPER/${name}; done
+# Running it simply like this with emapper.py and no other commands means it will use diamond database as default
+```
+
+This will produce ```.emapper.hits```, ```.emapper.annotations```, and ```.emapper.seed_orthologs``` files. KEGG ID information is found within ```.emapper.annotations```. From this file, extract the KEGG ids which is in the KEGG_KO column (they look something like "ko:K01100" or with multiple ids). Then once we have our last of KEGG ids from eggNOG-mapper, we can input them into the [__KEGG Database__](https://www.genome.jp/kegg/ko.html) to see what the functional names are associated with these KEGG terms.
