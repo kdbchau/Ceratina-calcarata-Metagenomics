@@ -61,7 +61,7 @@ Run FASTQC on the raw reads to check their quality, followed by trimming the ada
 [__FastQC script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/fastqc.sh)
 
 Adaptors are there and there are some poor quality bases. Will run trimmomatic to improve quality.
-[__Trimmomatic script__]()
+[__Trimmomatic script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/trimscript.sh)
 
 After this trim, run FASTQC again to check all is fine. Then move on to the read mapping! Can even use [__MultiQC__](https://multiqc.info/) here to get a nice comprehensive report of the trimmed results.
 
