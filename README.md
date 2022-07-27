@@ -98,7 +98,12 @@ Lastly, the two files were interesected using BCFTools intersect
 [__Variant calling script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/VariantCalling.sh). 
 
 
-## 4.2. 
+## 4.2. Isolation by resistance and environment
+We used two approaches to calculate isolation by resistance: least cost path and Circuitscape.
+The code for this analysis can be found here: [__Isolation by resistance and environment script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/isolation.R).
+Resistance values assigned for different land use classes can be found in Table 1.
+The generated raster files were also used in the Circuitscape analysis. 
+Additionally, we calculated environmental distances using annual temperature and precipitation (see Supplementary materials for details). 
 
 # 5. Metagenomics
 
