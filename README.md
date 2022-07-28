@@ -59,6 +59,8 @@ We will be using several software in order to take our unmapped whole genome seq
 16. [__GhostKOALA__](https://www.kegg.jp/ghostkoala/)
 17. [__eggNOG-mapper__](https://github.com/eggnogdb/eggnog-mapper) (version 2.1.6)
 18. [__R__](https://www.r-project.org/) (version 4.2.0)
+19. [__VCFTools__](http://vcftools.sourceforge.net/man_latest.html) (version 0.1.16)
+20. [__GATK__](https://gatk.broadinstitute.org/hc/en-us) (version 4.2.2.0)
 
 Note: Majority of the above software are already in the Compute Canada clusters and just need to be loaded using "module load". For example:
 
