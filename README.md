@@ -27,7 +27,8 @@ Funding:
 2. [Quality Check](#2-quality-check)
 3. [Separating Mapped and Unmapped Reads](#3-separating-mapped-and-unmapped-reads)
 4. [Population Genetics](#4-population-genetics)
-    * 
+    * [Variant Calling and Filtering](#41-variant-calling-and-filtering) 
+    * [Isolation by Resistance and Environment](#42-isolation-by-resistance-and-environment)
 5. [Metagenomics](#5-metagenomics)  
     * [metaSPADES](#51-metaspades)
     * [Diversity Statistics](#52-diversity-statistics)
@@ -94,18 +95,19 @@ This will separate mapped and unmapped reads into fastq files which can then be 
 # 4. Population Genetics
 
 ## 4.1. Variant Calling and Filtering
-Variant calling was done using both GATK and BCFTools mpileup. 
+Two methods were used for variant calling: Genome Analysis Toolkit (GATK) and BCFTools. 
 The resulting VCF files were filtered using GATK, BCFtools and VCFtools. 
-Lastly, the two files were intrsected using BCFTools intersect 
+Lastly, the resulting VCF files were intersected using BCFTools. 
 The code for this analysis can be found here: [__Variant calling script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/VariantCalling.sh). 
+Additional details on the population genetics statistics calculations and population structure analyses can be found in the Methods and Supplementary Materials. 
 
 
-## 4.2. Isolation by resistance and environment
-We used two approaches to calculate isolation by resistance: least cost path and Circuitscape.
+## 4.2. Isolation by Resistance and Environment
+We used two approaches to calculate isolation by resistance: least cost path modelling and circuit theory. 
 The code for this analysis can be found here: [__Isolation by resistance and environment script__](https://github.com/kdbchau/Ceratina-calcarata-Metagenomics/blob/main/Scripts/isolation.R).
-Resistance values assigned for different land use classes can be found in Table 1.
-The generated raster files were also used in the Circuitscape analysis. 
-Additionally, we calculated environmental distances using annual temperature and precipitation (see Supplementary materials for details). 
+Resistance values assigned for different land use classes across the tested hypotheses can be found in Table 1.
+The generated raster files were also used in the Circuitscape analysis using [__Circuitscape__](https://circuitscape.org/) (version 5.0.0). 
+Additionally, we calculated environmental distances using annual temperature and precipitation (see Supplementary Materials for details on how climatic variables were obtained). 
 
 # 5. Metagenomics
 
