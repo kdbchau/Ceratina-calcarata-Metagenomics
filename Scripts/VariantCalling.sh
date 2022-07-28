@@ -89,15 +89,19 @@ rsync -raz --progress * ${TO_STAGE}
 rsync -raz --progress ${STAGED_PATH}/* ${TO_STAGE}
 echo "All transfers done"
 
+# --- once the above script finishes running, veryfy that all files were transferred successfully, and proceed to submit the next chunk as a separate SLURM job ---
 
 ### Creating GATK database
 
         gatk GenomicsDBImport \
         --genomicsdb-workspace-path ~/scratch/VariantCallingPipeline/GATK_pipeline/DB/DB_workspace_mergedINT \
-        --sample-name-map GVCF_map.txt \ #these is a file listing all sample IDs and their corresponding GVCF files 
+        --sample-name-map GVCF_map.txt \ #this is a file listing all sample IDs and their corresponding GVCF files 
         --batch-size 50 \
         --L scaffolds.list \ #this is a file listing all the scaffolds 
         --merge-contigs-into-num-partitions 25
+
+# --- once the above script finishes running, veryfy that all files were transferred successfully, and proceed to submit the next chunk as a separate SLURM job ---
+
 ### Genotyping individual GVCFs
 
 REF=/home/sfarida/projects/def-sanrehan/sfarida/reference_fasta/jasmine-uni1041-mb-hirise-teril_10-15-2020__final_assembly.fasta
@@ -126,6 +130,8 @@ fi
 
 ### Variant Calling complete 
 ### gatk_output.vcf.gz is used for downstream analysis
+
+# --- once the above script finishes running, veryfy that all files were transferred successfully, and proceed to submit the next chunk as a separate SLURM job ---
 
 
 bcftools filter --SnpGap 10 ../gatk_output.vcf.gz -O z -o gatk_output_gap10.vcf.gz
@@ -158,6 +164,8 @@ vcftools --gzvcf gatk_snps_filterpass.vcf.gz --min-meanDP 5  --max-meanDP 100 --
 vcftools --vcf gatk_snps_fpass_mf1.recode.vcf --remove samples_to_remove.txt --minDP 3 --min-meanDP 8 --max-missing 0.9 --recode --recode-INFO-all --out gatk_snps_fpass_mf1_178indv_minDP3_minmeanDP8_maxMissing90
 
 bgzip gatk_snps_fpass_mf1_178indv_minDP3_minmeanDP8_maxMissing90.recode.vcf
+
+# --- once the above script finishes running, veryfy that all files were transferred successfully, and proceed to submit the next chunk as a separate SLURM job ---
 
 # 2. BCFTools mpileup Variant Calling 
 
@@ -204,6 +212,9 @@ vcftools --gzvcf mp_snps_filterpass_manualfilter1.recode.vcf.gz --remove samples
 bgzip mp_snps_fpass_mf1_178indv_filter2.recode.vcf
 
 
+# --- once the above script finishes running, veryfy that all files were transferred successfully, and proceed to submit the next chunk as a separate SLURM job ---
+
+
 # 3. Intersecting GATK and BCFTools VCF files
 
 VCFgatk=./gatk_snps_fpass_mf1_178indv_minDP3_minmeanDP8_maxMissing90.recode.vcf.gz
@@ -215,7 +226,7 @@ module load vcftools
 
 bcftools isec -p SNPs_in_common $VCFgatk $VCFmp
 
-#Intersected GATK file was used for downtream analysis 
+#Intersected GATK file was used for downstream analysis 
 
 
 
