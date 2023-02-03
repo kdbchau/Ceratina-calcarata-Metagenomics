@@ -49,12 +49,12 @@ data_env$binned[data_env$binned == "5"] <- "Very_High"
 #Regression (do not use the binned columns)
 data_sp$binned <- data_env$Agriculture_Percent  # for regression, R2 negative = bad model
 set.seed(425)
-model <- randomForest(binned ~ ., data=data_sp, proximity=TRUE, ntree=1000)
+model <- randomForest(binned ~ ., data=data_sp, proximity=TRUE, ntree=1000) # removed mtry to run it as default since tunning this did not help, keep  ntree at 1000
 model # if var explained is negative, it is a bad fit
 
 #Classification (use the binned columns)
 # Add the binned column to data_sp dataframe
 data_sp$binned <- as.factor(data_env$binned)
 set.seed(425)
-model <- randomForest(binned ~ ., data=data_sp, proximity=TRUE, ntree=1000)
+model <- randomForest(binned ~ ., data=data_sp, proximity=TRUE, ntree=1000) # removed mtry to run it as default since tunning this did not help, , keep  ntree at 1000
 model # if OOB estimate of error rate is above 50%, it is a bad fit
