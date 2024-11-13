@@ -1,6 +1,6 @@
 # Integrative metagenomics of wild bees reveals urbanization tied to reduced genetic diversity and increased pathogen loads
 
-This repository hosts the scripts and brief methods from our [__manuscript__](). This project focused on using mapped and unmapped reads from whole genome sequencing of the small carpenter bee (_Ceratina calcarata_) to obtain population genetic and metagenomic data, respectively. Our main goal was to understand how the genetic and metagenomic components of the bee are influenced by an urbanization gradient.
+This repository hosts the scripts and brief methods from our [__manuscript__](https://onlinelibrary.wiley.com/doi/10.1111/gcb.16757). This project focused on using mapped and unmapped reads from whole genome sequencing of the small carpenter bee (_Ceratina calcarata_) to obtain population genetic and metagenomic data, respectively. Our main goal was to understand how the genetic and metagenomic components of the bee are influenced by an urbanization gradient.
 
 Authors:
 * [Katherine D. Chau (me)](https://www.linkedin.com/in/balasink/)
